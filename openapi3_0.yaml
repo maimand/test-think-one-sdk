@@ -1,0 +1,5213 @@
+openapi: 3.0.1
+info:
+  title: PCOMSSB LEAD MASTER API
+  version: v1
+servers:
+  - url: /NC_LeadMaster
+paths:
+  /api/Contact:
+    post:
+      tags:
+        - Contact
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ContactFilter'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/ContactFilter'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/ContactFilter'
+      responses:
+        '200':
+          description: Success
+  /api/Contact/create:
+    post:
+      tags:
+        - Contact
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ContactCreate'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/ContactCreate'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/ContactCreate'
+      responses:
+        '200':
+          description: Success
+  /api/Contact/contactList:
+    post:
+      tags:
+        - Contact
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ContactListing'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/ContactListing'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/ContactListing'
+      responses:
+        '200':
+          description: Success
+  /api/General/sendemail:
+    post:
+      tags:
+        - General
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MailRequest'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/MailRequest'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/MailRequest'
+      responses:
+        '200':
+          description: Success
+  /api/General/sendwhatsapp:
+    post:
+      tags:
+        - General
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SendWhatsappMessage'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/SendWhatsappMessage'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/SendWhatsappMessage'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+            text/json:
+              schema:
+                type: string
+  /api/General/Extract:
+    post:
+      tags:
+        - General
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ExtractVehicleMessage'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/ExtractVehicleMessage'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/ExtractVehicleMessage'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+            text/json:
+              schema:
+                type: string
+  /api/General/readCaptcha:
+    post:
+      tags:
+        - General
+      parameters:
+        - name: img
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+  /api/HpApplication/Update:
+    post:
+      tags:
+        - HpApplication
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateHpApplicationMessage'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/UpdateHpApplicationMessage'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/UpdateHpApplicationMessage'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+            text/json:
+              schema:
+                type: string
+  /api/HpApplication:
+    post:
+      tags:
+        - HpApplication
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GetHpApplicationListMessage'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/GetHpApplicationListMessage'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/GetHpApplicationListMessage'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+            text/json:
+              schema:
+                type: string
+  /api/HpApplication/Get:
+    post:
+      tags:
+        - HpApplication
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GetHpApplicationMessage'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/GetHpApplicationMessage'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/GetHpApplicationMessage'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+            text/json:
+              schema:
+                type: string
+  /api/HpApplication/List:
+    post:
+      tags:
+        - HpApplication
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GetListMessage'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/GetListMessage'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/GetListMessage'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+            text/json:
+              schema:
+                type: string
+  /api/HpApplication/verification:
+    post:
+      tags:
+        - HpApplication
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/VerifyHpApplicationMessage'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/VerifyHpApplicationMessage'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/VerifyHpApplicationMessage'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+            text/json:
+              schema:
+                type: string
+  /api/HpApplication/void:
+    post:
+      tags:
+        - HpApplication
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/VoidHpApplicationMessage'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/VoidHpApplicationMessage'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/VoidHpApplicationMessage'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+            text/json:
+              schema:
+                type: string
+  /api/HpApplication/undoapproval:
+    post:
+      tags:
+        - HpApplication
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UndoApprovalHpApplicationMessage'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/UndoApprovalHpApplicationMessage'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/UndoApprovalHpApplicationMessage'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+            text/json:
+              schema:
+                type: string
+  /api/HpApplication/GenerateHPAgmt:
+    post:
+      tags:
+        - HpApplication
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GenerateHpAgreementMessage'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/GenerateHpAgreementMessage'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/GenerateHpAgreementMessage'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+            text/json:
+              schema:
+                type: string
+  /api/HpApplication/LoanDetails/Update:
+    post:
+      tags:
+        - HpApplication
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateLoanDetailsMessage'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/UpdateLoanDetailsMessage'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/UpdateLoanDetailsMessage'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+            text/json:
+              schema:
+                type: string
+  /api/HpApplication/ApprovalAdvice/Update:
+    post:
+      tags:
+        - HpApplication
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateApprovalAdviceMessage'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/UpdateApprovalAdviceMessage'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/UpdateApprovalAdviceMessage'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+            text/json:
+              schema:
+                type: string
+  /api/HpApplication/Applicant/Create:
+    post:
+      tags:
+        - HpApplication
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateApplicantMessage'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/CreateApplicantMessage'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/CreateApplicantMessage'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+            text/json:
+              schema:
+                type: string
+  /api/HpApplication/Applicant/Update:
+    post:
+      tags:
+        - HpApplication
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateApplicantMessage'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/UpdateApplicantMessage'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/UpdateApplicantMessage'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+            text/json:
+              schema:
+                type: string
+  /api/HpApplication/Applicant/Get:
+    post:
+      tags:
+        - HpApplication
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GetApplicantMessage'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/GetApplicantMessage'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/GetApplicantMessage'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+            text/json:
+              schema:
+                type: string
+  /api/HpApplication/Guarantor/Add:
+    post:
+      tags:
+        - HpApplication
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AddGuarantorMessage'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/AddGuarantorMessage'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/AddGuarantorMessage'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+            text/json:
+              schema:
+                type: string
+  /api/HpApplication/Guarantor/Update:
+    post:
+      tags:
+        - HpApplication
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateGuarantorMessage'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/UpdateGuarantorMessage'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/UpdateGuarantorMessage'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+            text/json:
+              schema:
+                type: string
+  /api/HpApplication/Guarantor/Get:
+    post:
+      tags:
+        - HpApplication
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GetGuarantorListMessage'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/GetGuarantorListMessage'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/GetGuarantorListMessage'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+            text/json:
+              schema:
+                type: string
+  /api/HpApplication/Guarantor/Delete:
+    post:
+      tags:
+        - HpApplication
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DeleteGuarantorMessage'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/DeleteGuarantorMessage'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/DeleteGuarantorMessage'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+            text/json:
+              schema:
+                type: string
+  /api/HpApplication/Document/Create:
+    post:
+      tags:
+        - HpApplication
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                ApplicationNo:
+                  type: string
+                ApplicationRev:
+                  type: string
+            encoding:
+              ApplicationNo:
+                style: form
+              ApplicationRev:
+                style: form
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+            text/json:
+              schema:
+                type: string
+  /api/HpApplication/Document/List:
+    post:
+      tags:
+        - HpApplication
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GetDocumentListMessage'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/GetDocumentListMessage'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/GetDocumentListMessage'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+            text/json:
+              schema:
+                type: string
+  /api/HpApplication/Document/Delete:
+    post:
+      tags:
+        - HpApplication
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DeleteDocumentMessage'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/DeleteDocumentMessage'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/DeleteDocumentMessage'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+            text/json:
+              schema:
+                type: string
+  /api/HpApplication/PostApplication/Submit:
+    post:
+      tags:
+        - HpApplication
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SubmitPostApplicationMessage'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/SubmitPostApplicationMessage'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/SubmitPostApplicationMessage'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+            text/json:
+              schema:
+                type: string
+  /api/InsuranceQuotation:
+    post:
+      tags:
+        - InsuranceQuotation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GetInsuranceQuotationListMessage'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/GetInsuranceQuotationListMessage'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/GetInsuranceQuotationListMessage'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+            text/json:
+              schema:
+                type: string
+  /api/InsuranceQuotation/Get:
+    post:
+      tags:
+        - InsuranceQuotation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GetInsuranceQuotationMessage'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/GetInsuranceQuotationMessage'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/GetInsuranceQuotationMessage'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+            text/json:
+              schema:
+                type: string
+  /api/InsuranceQuotation/AddItem:
+    post:
+      tags:
+        - InsuranceQuotation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AddItemInsuranceQuotationMessage'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/AddItemInsuranceQuotationMessage'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/AddItemInsuranceQuotationMessage'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+            text/json:
+              schema:
+                type: string
+  /api/InsuranceQuotation/AddDriver:
+    post:
+      tags:
+        - InsuranceQuotation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AddDriverInsuranceQuotationMessage'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/AddDriverInsuranceQuotationMessage'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/AddDriverInsuranceQuotationMessage'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+            text/json:
+              schema:
+                type: string
+  /api/InsuranceQuotation/UpdateDetail:
+    post:
+      tags:
+        - InsuranceQuotation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateDetailInsuranceQuotationMessage'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/UpdateDetailInsuranceQuotationMessage'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/UpdateDetailInsuranceQuotationMessage'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+            text/json:
+              schema:
+                type: string
+  /api/InsuranceQuotation/UpdateInsuredDetail:
+    post:
+      tags:
+        - InsuranceQuotation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateInsuredDetailMessage'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/UpdateInsuredDetailMessage'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/UpdateInsuredDetailMessage'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+            text/json:
+              schema:
+                type: string
+  /api/InsuranceQuotation/UpdateVehicleDetail:
+    post:
+      tags:
+        - InsuranceQuotation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateVehicleMessage'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/UpdateVehicleMessage'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/UpdateVehicleMessage'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+            text/json:
+              schema:
+                type: string
+  /api/InsuranceQuotation/UpdateItem:
+    post:
+      tags:
+        - InsuranceQuotation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateItemInsuranceQuotationMessage'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/UpdateItemInsuranceQuotationMessage'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/UpdateItemInsuranceQuotationMessage'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+            text/json:
+              schema:
+                type: string
+  /api/InsuranceQuotation/DeleteItem:
+    post:
+      tags:
+        - InsuranceQuotation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DeleteItemInsuranceQuotationMessage'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/DeleteItemInsuranceQuotationMessage'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/DeleteItemInsuranceQuotationMessage'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+            text/json:
+              schema:
+                type: string
+  /api/InsuranceQuotation/UpdateDriver:
+    post:
+      tags:
+        - InsuranceQuotation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateDriverInsuranceQuotationMessage'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/UpdateDriverInsuranceQuotationMessage'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/UpdateDriverInsuranceQuotationMessage'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+            text/json:
+              schema:
+                type: string
+  /api/InsuranceQuotation/DeleteDriver:
+    post:
+      tags:
+        - InsuranceQuotation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DeleteDriverInsuranceQuotationMessage'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/DeleteDriverInsuranceQuotationMessage'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/DeleteDriverInsuranceQuotationMessage'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+            text/json:
+              schema:
+                type: string
+  /api/InsuranceQuotation/Void:
+    post:
+      tags:
+        - InsuranceQuotation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/VoidInsuranceQuotationMessage'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/VoidInsuranceQuotationMessage'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/VoidInsuranceQuotationMessage'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+            text/json:
+              schema:
+                type: string
+  /api/InsuranceQuotation/GenerateInsuranceAgmt:
+    post:
+      tags:
+        - InsuranceQuotation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GenerateInsuranceAgreementMessage'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/GenerateInsuranceAgreementMessage'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/GenerateInsuranceAgreementMessage'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+            text/json:
+              schema:
+                type: string
+  /api/LeadMaster:
+    post:
+      tags:
+        - LeadMaster
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LeadMasterPost'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/LeadMasterPost'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/LeadMasterPost'
+      responses:
+        '200':
+          description: Success
+  /api/LeadMaster/get:
+    post:
+      tags:
+        - LeadMaster
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GetLeadMasterMessage'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/GetLeadMasterMessage'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/GetLeadMasterMessage'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+            text/json:
+              schema:
+                type: string
+  /api/LeadMaster/create:
+    post:
+      tags:
+        - LeadMaster
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LeadMasterCreate'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/LeadMasterCreate'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/LeadMasterCreate'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+            text/json:
+              schema:
+                type: string
+  /api/LeadMaster/update:
+    post:
+      tags:
+        - LeadMaster
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateLeadMasterMessage'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/UpdateLeadMasterMessage'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/UpdateLeadMasterMessage'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+            text/json:
+              schema:
+                type: string
+  /api/LeadMaster/void:
+    post:
+      tags:
+        - LeadMaster
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/VoidLeadMasterMessage'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/VoidLeadMasterMessage'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/VoidLeadMasterMessage'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+            text/json:
+              schema:
+                type: string
+  /api/LeadMaster/unvoid:
+    post:
+      tags:
+        - LeadMaster
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UnvoidLeadMasterMessage'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/UnvoidLeadMasterMessage'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/UnvoidLeadMasterMessage'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+            text/json:
+              schema:
+                type: string
+  /api/LeadMaster/assign:
+    post:
+      tags:
+        - LeadMaster
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AssignLeadMasterMessage'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/AssignLeadMasterMessage'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/AssignLeadMasterMessage'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+            text/json:
+              schema:
+                type: string
+  /api/LeadMaster/unassign:
+    post:
+      tags:
+        - LeadMaster
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UnassignLeadMasterMessage'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/UnassignLeadMasterMessage'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/UnassignLeadMasterMessage'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+            text/json:
+              schema:
+                type: string
+  /api/LeadMaster/quote:
+    post:
+      tags:
+        - LeadMaster
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/QuoteLeadMasterMessage'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/QuoteLeadMasterMessage'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/QuoteLeadMasterMessage'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+            text/json:
+              schema:
+                type: string
+  /api/LeadMaster/activity:
+    post:
+      tags:
+        - LeadMaster
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GetActivitiesMessage'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/GetActivitiesMessage'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/GetActivitiesMessage'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+            text/json:
+              schema:
+                type: string
+  /api/LeadMaster/activity/create:
+    post:
+      tags:
+        - LeadMaster
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateActivityMessage'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/CreateActivityMessage'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/CreateActivityMessage'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+            text/json:
+              schema:
+                type: string
+  /api/LeadMaster/activity/update:
+    post:
+      tags:
+        - LeadMaster
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateActivityMessage'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/UpdateActivityMessage'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/UpdateActivityMessage'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+            text/json:
+              schema:
+                type: string
+  /api/LeadMaster/activity/delete:
+    post:
+      tags:
+        - LeadMaster
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DeleteActivityMessage'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/DeleteActivityMessage'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/DeleteActivityMessage'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+            text/json:
+              schema:
+                type: string
+  /api/Login:
+    post:
+      tags:
+        - Login
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LoginMessage'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/LoginMessage'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/LoginMessage'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+            text/json:
+              schema:
+                type: string
+  /api/Login/Logout:
+    post:
+      tags:
+        - Login
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LogoutMessage'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/LogoutMessage'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/LogoutMessage'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+            text/json:
+              schema:
+                type: string
+  /api/PurchaseQuotation:
+    post:
+      tags:
+        - PurchaseQuotation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GetPurchaseQuotationListMessage'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/GetPurchaseQuotationListMessage'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/GetPurchaseQuotationListMessage'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+            text/json:
+              schema:
+                type: string
+  /api/PurchaseQuotation/Get:
+    post:
+      tags:
+        - PurchaseQuotation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GetPurchaseQuotationMessage'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/GetPurchaseQuotationMessage'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/GetPurchaseQuotationMessage'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+            text/json:
+              schema:
+                type: string
+  /api/PurchaseQuotation/AddItem:
+    post:
+      tags:
+        - PurchaseQuotation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AddItemPurchaseQuotationMessage'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/AddItemPurchaseQuotationMessage'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/AddItemPurchaseQuotationMessage'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+            text/json:
+              schema:
+                type: string
+  /api/PurchaseQuotation/Update:
+    post:
+      tags:
+        - PurchaseQuotation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdatePurchaseQuotationMessage'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/UpdatePurchaseQuotationMessage'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/UpdatePurchaseQuotationMessage'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+            text/json:
+              schema:
+                type: string
+  /api/PurchaseQuotation/UpdateDetail:
+    post:
+      tags:
+        - PurchaseQuotation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateDetailPurchaseQuotationMessage'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/UpdateDetailPurchaseQuotationMessage'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/UpdateDetailPurchaseQuotationMessage'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+            text/json:
+              schema:
+                type: string
+  /api/PurchaseQuotation/UpdateCustomer:
+    post:
+      tags:
+        - PurchaseQuotation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateCustomerPurchaseQuotationMessage'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/UpdateCustomerPurchaseQuotationMessage'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/UpdateCustomerPurchaseQuotationMessage'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+            text/json:
+              schema:
+                type: string
+  /api/PurchaseQuotation/UpdateFullSettlement:
+    post:
+      tags:
+        - PurchaseQuotation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: >-
+                #/components/schemas/UpdateFullSettlementPurchaseQuotationMessage
+          text/json:
+            schema:
+              $ref: >-
+                #/components/schemas/UpdateFullSettlementPurchaseQuotationMessage
+          application/*+json:
+            schema:
+              $ref: >-
+                #/components/schemas/UpdateFullSettlementPurchaseQuotationMessage
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+            text/json:
+              schema:
+                type: string
+  /api/PurchaseQuotation/QuoteDetails:
+    post:
+      tags:
+        - PurchaseQuotation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateQuotationDetailMessage'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/UpdateQuotationDetailMessage'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/UpdateQuotationDetailMessage'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+            text/json:
+              schema:
+                type: string
+  /api/PurchaseQuotation/Void:
+    post:
+      tags:
+        - PurchaseQuotation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/VoidPurchaseQuotationMessage'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/VoidPurchaseQuotationMessage'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/VoidPurchaseQuotationMessage'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+            text/json:
+              schema:
+                type: string
+  /api/PurchaseQuotation/UnVoid:
+    post:
+      tags:
+        - PurchaseQuotation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UnvoidPurchaseQuotationMessage'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/UnvoidPurchaseQuotationMessage'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/UnvoidPurchaseQuotationMessage'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+            text/json:
+              schema:
+                type: string
+  /api/PurchaseQuotation/UndoQuoteDetails:
+    post:
+      tags:
+        - PurchaseQuotation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UndoQuoteDetailsMessage'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/UndoQuoteDetailsMessage'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/UndoQuoteDetailsMessage'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+            text/json:
+              schema:
+                type: string
+  /api/PurchaseQuotation/DeleteVehicle:
+    post:
+      tags:
+        - PurchaseQuotation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DeleteVehiclePurchaseQuotationMessage'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/DeleteVehiclePurchaseQuotationMessage'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/DeleteVehiclePurchaseQuotationMessage'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+            text/json:
+              schema:
+                type: string
+  /api/PurchaseQuotation/CreateNewVehicle:
+    post:
+      tags:
+        - PurchaseQuotation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateNewVehicleMessage'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/CreateNewVehicleMessage'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/CreateNewVehicleMessage'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+            text/json:
+              schema:
+                type: string
+  /api/PurchaseQuotation/Confirm:
+    post:
+      tags:
+        - PurchaseQuotation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ConfirmPurchaseQuotationMessage'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/ConfirmPurchaseQuotationMessage'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/ConfirmPurchaseQuotationMessage'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+            text/json:
+              schema:
+                type: string
+  /api/PurchaseQuotation/UndoConfirm:
+    post:
+      tags:
+        - PurchaseQuotation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UndoConfirmPurchaseQuotationMessage'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/UndoConfirmPurchaseQuotationMessage'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/UndoConfirmPurchaseQuotationMessage'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+            text/json:
+              schema:
+                type: string
+  /api/PurchaseQuotation/GeneratePurchaseAgmt:
+    post:
+      tags:
+        - PurchaseQuotation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GeneratePurchaseAgreementMessage'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/GeneratePurchaseAgreementMessage'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/GeneratePurchaseAgreementMessage'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+            text/json:
+              schema:
+                type: string
+  /api/RentalQuotation:
+    post:
+      tags:
+        - RentalQuotation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GetRentalQuotationListMessage'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/GetRentalQuotationListMessage'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/GetRentalQuotationListMessage'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+            text/json:
+              schema:
+                type: string
+  /api/RentalQuotation/Get:
+    post:
+      tags:
+        - RentalQuotation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GetRentalQuotationMessage'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/GetRentalQuotationMessage'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/GetRentalQuotationMessage'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+            text/json:
+              schema:
+                type: string
+  /api/RentalQuotation/UpdateDetail:
+    post:
+      tags:
+        - RentalQuotation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateDetailRentalQuotationMessage'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/UpdateDetailRentalQuotationMessage'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/UpdateDetailRentalQuotationMessage'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+            text/json:
+              schema:
+                type: string
+  /api/RentalQuotation/UpdateCustomer:
+    post:
+      tags:
+        - RentalQuotation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateCustomerRentalQuotationMessage'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/UpdateCustomerRentalQuotationMessage'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/UpdateCustomerRentalQuotationMessage'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+            text/json:
+              schema:
+                type: string
+  /api/RentalQuotation/AddItem:
+    post:
+      tags:
+        - RentalQuotation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AddItemRentalQuotationMessage'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/AddItemRentalQuotationMessage'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/AddItemRentalQuotationMessage'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+            text/json:
+              schema:
+                type: string
+  /api/RentalQuotation/UpdateItem:
+    post:
+      tags:
+        - RentalQuotation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateItemRentalQuotationMessage'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/UpdateItemRentalQuotationMessage'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/UpdateItemRentalQuotationMessage'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+            text/json:
+              schema:
+                type: string
+  /api/RentalQuotation/DeleteItem:
+    post:
+      tags:
+        - RentalQuotation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DeleteItemRentalQuotationMessage'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/DeleteItemRentalQuotationMessage'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/DeleteItemRentalQuotationMessage'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+            text/json:
+              schema:
+                type: string
+  /api/RentalQuotation/Void:
+    post:
+      tags:
+        - RentalQuotation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/VoidRentalQuotationMessage'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/VoidRentalQuotationMessage'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/VoidRentalQuotationMessage'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+            text/json:
+              schema:
+                type: string
+  /api/RentalQuotation/UnVoid:
+    post:
+      tags:
+        - RentalQuotation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UnvoidRentalQuotationMessage'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/UnvoidRentalQuotationMessage'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/UnvoidRentalQuotationMessage'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+            text/json:
+              schema:
+                type: string
+  /api/RentalQuotation/Confirm:
+    post:
+      tags:
+        - RentalQuotation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ConfirmRentalQuotationMessage'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/ConfirmRentalQuotationMessage'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/ConfirmRentalQuotationMessage'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+            text/json:
+              schema:
+                type: string
+  /api/RentalQuotation/UndoConfirm:
+    post:
+      tags:
+        - RentalQuotation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UndoConfirmRentalQuotationMessage'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/UndoConfirmRentalQuotationMessage'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/UndoConfirmRentalQuotationMessage'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+            text/json:
+              schema:
+                type: string
+  /api/RentalQuotation/GenerateRentalAgmt:
+    post:
+      tags:
+        - RentalQuotation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GenerateRentalAgreementMessage'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/GenerateRentalAgreementMessage'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/GenerateRentalAgreementMessage'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+            text/json:
+              schema:
+                type: string
+  /api/SalesQuotation:
+    post:
+      tags:
+        - SalesQuotation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SalesQuotationFilter'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/SalesQuotationFilter'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/SalesQuotationFilter'
+      responses:
+        '200':
+          description: Success
+  /api/SalesQuotation/Get:
+    post:
+      tags:
+        - SalesQuotation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SalesQuotationGet'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/SalesQuotationGet'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/SalesQuotationGet'
+      responses:
+        '200':
+          description: Success
+  /api/SalesQuotation/AddItem:
+    post:
+      tags:
+        - SalesQuotation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SalesQuotationAddItem'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/SalesQuotationAddItem'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/SalesQuotationAddItem'
+      responses:
+        '200':
+          description: Success
+  /api/SalesQuotation/Update:
+    post:
+      tags:
+        - SalesQuotation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateSalesQuotationMessage'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/UpdateSalesQuotationMessage'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/UpdateSalesQuotationMessage'
+      responses:
+        '200':
+          description: Success
+  /api/SalesQuotation/RequestInsurance:
+    post:
+      tags:
+        - SalesQuotation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RequestGenLead'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/RequestGenLead'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/RequestGenLead'
+      responses:
+        '200':
+          description: Success
+  /api/SalesQuotation/RequestHPApp:
+    post:
+      tags:
+        - SalesQuotation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RequestGenLead'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/RequestGenLead'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/RequestGenLead'
+      responses:
+        '200':
+          description: Success
+  /api/SalesQuotation/UpdateDetail:
+    post:
+      tags:
+        - SalesQuotation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateQuote'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/UpdateQuote'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/UpdateQuote'
+      responses:
+        '200':
+          description: Success
+  /api/SalesQuotation/UpdateCustomer:
+    post:
+      tags:
+        - SalesQuotation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateCustomerMessage'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/UpdateCustomerMessage'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/UpdateCustomerMessage'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+            text/json:
+              schema:
+                type: string
+  /api/SalesQuotation/UpdateIsTradeIn:
+    post:
+      tags:
+        - SalesQuotation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateIsTradeInMessage'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/UpdateIsTradeInMessage'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/UpdateIsTradeInMessage'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+            text/json:
+              schema:
+                type: string
+  /api/SalesQuotation/DeleteVehicle:
+    post:
+      tags:
+        - SalesQuotation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DeleteVehicleMessage'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/DeleteVehicleMessage'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/DeleteVehicleMessage'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+            text/json:
+              schema:
+                type: string
+  /api/SalesQuotation/QuoteItem:
+    post:
+      tags:
+        - SalesQuotation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EditQuoteItemMessage'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/EditQuoteItemMessage'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/EditQuoteItemMessage'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+            text/json:
+              schema:
+                type: string
+  /api/SalesQuotation/UndoQuoteItem:
+    post:
+      tags:
+        - SalesQuotation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UndoQuoteItemMessage'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/UndoQuoteItemMessage'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/UndoQuoteItemMessage'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+            text/json:
+              schema:
+                type: string
+  /api/SalesQuotation/Void:
+    post:
+      tags:
+        - SalesQuotation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/VoidSalesQuotationMessage'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/VoidSalesQuotationMessage'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/VoidSalesQuotationMessage'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+            text/json:
+              schema:
+                type: string
+  /api/SalesQuotation/UnVoid:
+    post:
+      tags:
+        - SalesQuotation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UnvoidSalesQuotationMessage'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/UnvoidSalesQuotationMessage'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/UnvoidSalesQuotationMessage'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+            text/json:
+              schema:
+                type: string
+  /api/SalesQuotation/Lose:
+    post:
+      tags:
+        - SalesQuotation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LoseSalesQuotationMessage'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/LoseSalesQuotationMessage'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/LoseSalesQuotationMessage'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+            text/json:
+              schema:
+                type: string
+  /api/SalesQuotation/Unlose:
+    post:
+      tags:
+        - SalesQuotation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UnloseSalesQuotationMessage'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/UnloseSalesQuotationMessage'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/UnloseSalesQuotationMessage'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+            text/json:
+              schema:
+                type: string
+  /api/SalesQuotation/Confirm:
+    post:
+      tags:
+        - SalesQuotation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ConfirmSalesQuotationMessage'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/ConfirmSalesQuotationMessage'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/ConfirmSalesQuotationMessage'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+            text/json:
+              schema:
+                type: string
+  /api/SalesQuotation/UndoConfirm:
+    post:
+      tags:
+        - SalesQuotation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UndoConfirmSalesQuotationMessage'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/UndoConfirmSalesQuotationMessage'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/UndoConfirmSalesQuotationMessage'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+            text/json:
+              schema:
+                type: string
+  /api/SalesQuotation/GenerateSalesOrder:
+    post:
+      tags:
+        - SalesQuotation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GenerateSalesOrderMessage'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/GenerateSalesOrderMessage'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/GenerateSalesOrderMessage'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+            text/json:
+              schema:
+                type: string
+  /api/SalesQuotation/Print:
+    post:
+      tags:
+        - SalesQuotation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PrintSalesQuotationAsyncMessage'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/PrintSalesQuotationAsyncMessage'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/PrintSalesQuotationAsyncMessage'
+      responses:
+        '200':
+          description: Success
+  /api/Selection/SourceType:
+    post:
+      tags:
+        - Selection
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+            text/json:
+              schema:
+                type: string
+  /api/Selection/LeadType:
+    post:
+      tags:
+        - Selection
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+            text/json:
+              schema:
+                type: string
+  /api/Selection/Salesman:
+    post:
+      tags:
+        - Selection
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+            text/json:
+              schema:
+                type: string
+  /api/Selection/Propellant:
+    post:
+      tags:
+        - Selection
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+            text/json:
+              schema:
+                type: string
+  /api/Selection/CoverageType:
+    post:
+      tags:
+        - Selection
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+            text/json:
+              schema:
+                type: string
+  /api/Selection/Stock:
+    post:
+      tags:
+        - Selection
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+            text/json:
+              schema:
+                type: string
+  /api/Selection/BusinessNature:
+    post:
+      tags:
+        - Selection
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+            text/json:
+              schema:
+                type: string
+  /api/Selection/Nationality:
+    post:
+      tags:
+        - Selection
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+            text/json:
+              schema:
+                type: string
+  /api/Selection/InsuranceCompany:
+    post:
+      tags:
+        - Selection
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+            text/json:
+              schema:
+                type: string
+  /api/Selection/CostItem:
+    post:
+      tags:
+        - Selection
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+            text/json:
+              schema:
+                type: string
+  /api/Vehicle:
+    post:
+      tags:
+        - Vehicle
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/VehicleFilter'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/VehicleFilter'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/VehicleFilter'
+      responses:
+        '200':
+          description: Success
+components:
+  schemas:
+    AddDriverInsuranceQuotationMessage:
+      type: object
+      properties:
+        quoteno:
+          type: string
+          nullable: true
+        name:
+          type: string
+          nullable: true
+        nric:
+          type: string
+          nullable: true
+        dob:
+          type: string
+          format: date
+          nullable: true
+        gender:
+          type: string
+          nullable: true
+        passtype:
+          type: string
+          nullable: true
+        maritalst:
+          type: string
+          nullable: true
+        nationality:
+          type: string
+          nullable: true
+        drivingpassdate:
+          type: string
+          format: date
+          nullable: true
+        contactno:
+          type: string
+          nullable: true
+        email:
+          type: string
+          nullable: true
+        addr1:
+          type: string
+          nullable: true
+        addr2:
+          type: string
+          nullable: true
+        addr3:
+          type: string
+          nullable: true
+        zip:
+          type: string
+          nullable: true
+        country:
+          type: string
+          nullable: true
+        baddr1:
+          type: string
+          nullable: true
+        baddr2:
+          type: string
+          nullable: true
+        baddr3:
+          type: string
+          nullable: true
+        billzip:
+          type: string
+          nullable: true
+        billcountry:
+          type: string
+          nullable: true
+        job:
+          type: string
+          nullable: true
+        salary:
+          type: number
+          format: double
+          nullable: true
+        employer:
+          type: string
+          nullable: true
+        employercontact:
+          type: string
+          nullable: true
+        lengthofservice:
+          type: integer
+          format: int32
+          nullable: true
+        selfemployed:
+          type: boolean
+          nullable: true
+        issameaddress:
+          type: boolean
+          nullable: true
+      additionalProperties: false
+    AddGuarantorMessage:
+      type: object
+      properties:
+        ApplicationNo:
+          type: string
+          nullable: true
+        ApplicationRev:
+          type: string
+          nullable: true
+        type:
+          type: string
+          nullable: true
+        nric:
+          type: string
+          nullable: true
+        name:
+          type: string
+          nullable: true
+        dob:
+          type: string
+          format: date
+          nullable: true
+        gender:
+          type: string
+          nullable: true
+        passtype:
+          type: string
+          nullable: true
+        maritalst:
+          type: string
+          nullable: true
+        nationality:
+          type: string
+          nullable: true
+        drivingpassdate:
+          type: string
+          format: date
+          nullable: true
+        contactno:
+          type: string
+          nullable: true
+        email:
+          type: string
+          nullable: true
+        addr1:
+          type: string
+          nullable: true
+        addr2:
+          type: string
+          nullable: true
+        addr3:
+          type: string
+          nullable: true
+        zip:
+          type: string
+          nullable: true
+        country:
+          type: string
+          nullable: true
+        baddr1:
+          type: string
+          nullable: true
+        baddr2:
+          type: string
+          nullable: true
+        baddr3:
+          type: string
+          nullable: true
+        billzip:
+          type: string
+          nullable: true
+        billcountry:
+          type: string
+          nullable: true
+        job:
+          type: string
+          nullable: true
+        salary:
+          type: number
+          format: double
+          nullable: true
+        employer:
+          type: string
+          nullable: true
+        employercontact:
+          type: string
+          nullable: true
+        lengthofservice:
+          type: integer
+          format: int32
+          nullable: true
+        issameaddress:
+          type: boolean
+          nullable: true
+        selfemployed:
+          type: boolean
+          nullable: true
+        relation:
+          type: string
+          nullable: true
+      additionalProperties: false
+    AddItemInsuranceQuotationMessage:
+      type: object
+      properties:
+        insurancecompany:
+          type: string
+          nullable: true
+        premium:
+          type: number
+          format: double
+          nullable: true
+        excess:
+          type: number
+          format: double
+          nullable: true
+        remark:
+          type: string
+          nullable: true
+        quoteno:
+          type: string
+          nullable: true
+      additionalProperties: false
+    AddItemPurchaseQuotationMessage:
+      type: object
+      properties:
+        quoteno:
+          type: string
+          nullable: true
+        regno:
+          type: string
+          nullable: true
+        purchaseprice:
+          type: number
+          format: double
+          nullable: true
+      additionalProperties: false
+    AddItemRentalQuotationMessage:
+      type: object
+      properties:
+        quoteno:
+          type: string
+          nullable: true
+        make:
+          type: string
+          nullable: true
+        model:
+          type: string
+          nullable: true
+        description:
+          type: string
+          nullable: true
+        price:
+          type: number
+          format: double
+          nullable: true
+        remark:
+          type: string
+          nullable: true
+      additionalProperties: false
+    AssignLeadMasterMessage:
+      type: object
+      properties:
+        leadno:
+          type: string
+          nullable: true
+        duedate:
+          type: string
+          format: date
+          nullable: true
+        salesman:
+          type: string
+          nullable: true
+        entrystaff:
+          type: string
+          nullable: true
+      additionalProperties: false
+    ConfirmItemDTO:
+      type: object
+      properties:
+        regno:
+          type: string
+          nullable: true
+        isconfirm:
+          type: boolean
+          nullable: true
+      additionalProperties: false
+    ConfirmItemPurchaseQuotationDTO:
+      type: object
+      properties:
+        regno:
+          type: string
+          nullable: true
+        isconfirm:
+          type: boolean
+          nullable: true
+      additionalProperties: false
+    ConfirmItemRentalQuotationDTO:
+      type: object
+      properties:
+        code:
+          type: number
+          format: double
+        isconfirm:
+          type: boolean
+          nullable: true
+      additionalProperties: false
+    ConfirmPurchaseQuotationMessage:
+      type: object
+      properties:
+        quoteno:
+          type: string
+          nullable: true
+        confirmdate:
+          type: string
+          format: date
+          nullable: true
+        confirmremark:
+          type: string
+          nullable: true
+        confirmitem:
+          type: array
+          items:
+            $ref: '#/components/schemas/ConfirmItemPurchaseQuotationDTO'
+          nullable: true
+      additionalProperties: false
+    ConfirmRentalQuotationMessage:
+      type: object
+      properties:
+        quoteno:
+          type: string
+          nullable: true
+        confirmdate:
+          type: string
+          format: date
+          nullable: true
+        confirmremark:
+          type: string
+          nullable: true
+        confirmitem:
+          type: array
+          items:
+            $ref: '#/components/schemas/ConfirmItemRentalQuotationDTO'
+          nullable: true
+      additionalProperties: false
+    ConfirmSalesQuotationMessage:
+      type: object
+      properties:
+        quoteno:
+          type: string
+          nullable: true
+        confirmdate:
+          type: string
+          format: date
+          nullable: true
+        confirmremark:
+          type: string
+          nullable: true
+        confirmitem:
+          type: array
+          items:
+            $ref: '#/components/schemas/ConfirmItemDTO'
+          nullable: true
+      additionalProperties: false
+    ContactCreate:
+      type: object
+      properties:
+        type:
+          type: string
+          nullable: true
+        icno:
+          type: string
+          nullable: true
+        name:
+          type: string
+          nullable: true
+        dob:
+          type: string
+          format: date
+          nullable: true
+        gender:
+          type: string
+          nullable: true
+        passtype:
+          type: string
+          nullable: true
+        married:
+          type: string
+          nullable: true
+        nationality:
+          type: string
+          nullable: true
+        drivingpassdate:
+          type: string
+          format: date
+          nullable: true
+        contactno:
+          type: string
+          nullable: true
+        email:
+          type: string
+          nullable: true
+        addr1:
+          type: string
+          nullable: true
+        addr2:
+          type: string
+          nullable: true
+        addr3:
+          type: string
+          nullable: true
+        zip:
+          type: string
+          nullable: true
+        country:
+          type: string
+          nullable: true
+        baddr1:
+          type: string
+          nullable: true
+        baddr2:
+          type: string
+          nullable: true
+        baddr3:
+          type: string
+          nullable: true
+        billzip:
+          type: string
+          nullable: true
+        billcountry:
+          type: string
+          nullable: true
+        job:
+          type: string
+          nullable: true
+        salary:
+          type: number
+          format: double
+          nullable: true
+        employer:
+          type: string
+          nullable: true
+        employercontact:
+          type: string
+          nullable: true
+        lengthofservice:
+          type: integer
+          format: int32
+          nullable: true
+        gstregno:
+          type: string
+          nullable: true
+        contactperson:
+          type: string
+          nullable: true
+        businessnature:
+          type: string
+          nullable: true
+        incorporationdate:
+          type: string
+          format: date
+          nullable: true
+        businesscontactno:
+          type: string
+          nullable: true
+        businessemail:
+          type: string
+          nullable: true
+        issameaddress:
+          type: boolean
+          nullable: true
+        selfemployed:
+          type: boolean
+          nullable: true
+        leadno:
+          type: string
+          nullable: true
+      additionalProperties: false
+    ContactFilter:
+      type: object
+      properties:
+        icno:
+          type: string
+          nullable: true
+      additionalProperties: false
+    ContactListing:
+      type: object
+      properties:
+        icno:
+          type: string
+          nullable: true
+        name:
+          type: string
+          nullable: true
+      additionalProperties: false
+    CreateActivityMessage:
+      type: object
+      properties:
+        leadno:
+          type: string
+          nullable: true
+        followupdate:
+          type: string
+          format: date-time
+          nullable: true
+        remark:
+          type: string
+          nullable: true
+        entrystaff:
+          type: string
+          nullable: true
+      additionalProperties: false
+    CreateApplicantMessage:
+      type: object
+      properties:
+        applicationno:
+          type: string
+          nullable: true
+        applicationrev:
+          type: string
+          nullable: true
+        customername:
+          type: string
+          nullable: true
+        nric:
+          type: string
+          nullable: true
+        email:
+          type: string
+          nullable: true
+        contactno:
+          type: string
+          nullable: true
+      additionalProperties: false
+    CreateNewVehicleMessage:
+      type: object
+      properties:
+        quoteno:
+          type: string
+          nullable: true
+        new_used:
+          type: string
+          nullable: true
+        regno:
+          type: string
+          nullable: true
+        year:
+          type: string
+          nullable: true
+        make:
+          type: string
+          nullable: true
+        model:
+          type: string
+          nullable: true
+        chasisno:
+          type: string
+          nullable: true
+        engineno:
+          type: string
+          nullable: true
+        capacity:
+          type: string
+          nullable: true
+        originalregdate:
+          type: string
+          format: date
+          nullable: true
+        regdate:
+          type: string
+          format: date
+          nullable: true
+        vehicletype:
+          maxLength: 3
+          type: string
+          nullable: true
+        omv:
+          type: number
+          format: double
+          nullable: true
+        mileage:
+          type: string
+          nullable: true
+        propellant:
+          type: string
+          nullable: true
+        laden:
+          type: number
+          format: double
+          nullable: true
+        unladen:
+          type: number
+          format: double
+          nullable: true
+        transfercount:
+          type: integer
+          format: int32
+          nullable: true
+        coecategory:
+          type: string
+          nullable: true
+        vehiclescheme:
+          type: string
+          nullable: true
+        totalrebate:
+          type: number
+          format: double
+          nullable: true
+        quotapremium:
+          type: number
+          format: double
+          nullable: true
+        actualarfpaid:
+          type: number
+          format: double
+          nullable: true
+        opcrebate:
+          type: number
+          format: double
+          nullable: true
+        coerebate:
+          type: number
+          format: double
+          nullable: true
+        parfrebate:
+          type: number
+          format: double
+          nullable: true
+        opcrebateexpiry:
+          type: string
+          format: date
+          nullable: true
+        coeexpiry:
+          type: string
+          format: date
+          nullable: true
+        parfexpiry:
+          type: string
+          format: date
+          nullable: true
+        roadtaxexpiry:
+          type: string
+          format: date
+          nullable: true
+      additionalProperties: false
+    DeleteActivityMessage:
+      type: object
+      properties:
+        leadno:
+          type: string
+          nullable: true
+        code:
+          type: number
+          format: double
+      additionalProperties: false
+    DeleteDocumentMessage:
+      type: object
+      properties:
+        Code:
+          type: number
+          format: double
+      additionalProperties: false
+    DeleteDriverInsuranceQuotationMessage:
+      type: object
+      properties:
+        quoteno:
+          type: string
+          nullable: true
+        code:
+          type: number
+          format: double
+      additionalProperties: false
+    DeleteGuarantorMessage:
+      type: object
+      properties:
+        ApplicationNo:
+          type: string
+          nullable: true
+        Code:
+          type: number
+          format: double
+      additionalProperties: false
+    DeleteItemInsuranceQuotationMessage:
+      type: object
+      properties:
+        quoteno:
+          type: string
+          nullable: true
+        code:
+          type: number
+          format: double
+      additionalProperties: false
+    DeleteItemRentalQuotationMessage:
+      type: object
+      properties:
+        quoteno:
+          type: string
+          nullable: true
+        code:
+          type: number
+          format: double
+      additionalProperties: false
+    DeleteVehicleMessage:
+      type: object
+      properties:
+        quoteno:
+          type: string
+          nullable: true
+        regno:
+          type: string
+          nullable: true
+        rev:
+          type: string
+          nullable: true
+      additionalProperties: false
+    DeleteVehiclePurchaseQuotationMessage:
+      type: object
+      properties:
+        quoteno:
+          type: string
+          nullable: true
+        regno:
+          type: string
+          nullable: true
+        rev:
+          type: string
+          nullable: true
+      additionalProperties: false
+    EditQuoteItemMessage:
+      type: object
+      properties:
+        quoteno:
+          type: string
+          nullable: true
+        remark:
+          type: string
+          nullable: true
+      additionalProperties: false
+    ExtractVehicleMessage:
+      type: object
+      properties:
+        RegNo:
+          type: string
+          nullable: true
+        OwnerId:
+          type: string
+          nullable: true
+        OwnerIdType:
+          type: integer
+          format: int32
+          nullable: true
+        DeregDate:
+          type: string
+          format: date
+          nullable: true
+      additionalProperties: false
+    GenerateHpAgreementMessage:
+      type: object
+      properties:
+        ApplicationNo:
+          type: string
+          nullable: true
+        ApplicationRev:
+          type: string
+          nullable: true
+      additionalProperties: false
+    GenerateInsuranceAgreementMessage:
+      type: object
+      properties:
+        quoteno:
+          type: string
+          nullable: true
+      additionalProperties: false
+    GeneratePurchaseAgreementMessage:
+      type: object
+      properties:
+        quoteno:
+          type: string
+          nullable: true
+      additionalProperties: false
+    GenerateRentalAgreementMessage:
+      type: object
+      properties:
+        quoteno:
+          type: string
+          nullable: true
+      additionalProperties: false
+    GenerateSalesOrderMessage:
+      type: object
+      properties:
+        quoteno:
+          type: string
+          nullable: true
+      additionalProperties: false
+    GetActivitiesMessage:
+      type: object
+      properties:
+        leadno:
+          type: string
+          nullable: true
+      additionalProperties: false
+    GetApplicantMessage:
+      type: object
+      properties:
+        ApplicationNo:
+          type: string
+          nullable: true
+        ApplicationRev:
+          type: string
+          nullable: true
+      additionalProperties: false
+    GetDocumentListMessage:
+      type: object
+      properties:
+        ApplicationNo:
+          type: string
+          nullable: true
+        ApplicationRev:
+          type: string
+          nullable: true
+      additionalProperties: false
+    GetGuarantorListMessage:
+      type: object
+      properties:
+        ApplicationNo:
+          type: string
+          nullable: true
+        ApplicationRev:
+          type: string
+          nullable: true
+      additionalProperties: false
+    GetHpApplicationListMessage:
+      type: object
+      properties:
+        status:
+          type: string
+          nullable: true
+        datetype:
+          type: string
+          nullable: true
+        fromdate:
+          type: string
+          format: date
+          nullable: true
+        todate:
+          type: string
+          format: date
+          nullable: true
+        issuedby:
+          type: string
+          nullable: true
+        leadno:
+          type: string
+          nullable: true
+        customername:
+          type: string
+          nullable: true
+        ApplicationNo:
+          type: string
+          nullable: true
+        ApplicationRev:
+          type: string
+          nullable: true
+      additionalProperties: false
+    GetHpApplicationMessage:
+      type: object
+      properties:
+        ApplicationNo:
+          type: string
+          nullable: true
+        ApplicationRev:
+          type: string
+          nullable: true
+      additionalProperties: false
+    GetInsuranceQuotationListMessage:
+      type: object
+      properties:
+        status:
+          type: string
+          nullable: true
+        datetype:
+          type: string
+          nullable: true
+        fromdate:
+          type: string
+          format: date
+          nullable: true
+        todate:
+          type: string
+          format: date
+          nullable: true
+        issuedby:
+          type: string
+          nullable: true
+        quoteno:
+          type: string
+          nullable: true
+        leadno:
+          type: string
+          nullable: true
+        customername:
+          type: string
+          nullable: true
+      additionalProperties: false
+    GetInsuranceQuotationMessage:
+      type: object
+      properties:
+        quoteno:
+          type: string
+          nullable: true
+      additionalProperties: false
+    GetLeadMasterMessage:
+      type: object
+      properties:
+        leadno:
+          type: string
+          nullable: true
+      additionalProperties: false
+    GetListMessage:
+      type: object
+      properties:
+        ApplicationNo:
+          type: string
+          nullable: true
+        ApplicationRev:
+          type: string
+          nullable: true
+      additionalProperties: false
+    GetPurchaseQuotationListMessage:
+      type: object
+      properties:
+        status:
+          type: string
+          nullable: true
+        datetype:
+          type: string
+          nullable: true
+        fromdate:
+          type: string
+          format: date
+          nullable: true
+        todate:
+          type: string
+          format: date
+          nullable: true
+        issuedby:
+          type: string
+          nullable: true
+        quoteno:
+          type: string
+          nullable: true
+        leadno:
+          type: string
+          nullable: true
+        customername:
+          type: string
+          nullable: true
+      additionalProperties: false
+    GetPurchaseQuotationMessage:
+      type: object
+      properties:
+        quoteno:
+          type: string
+          nullable: true
+      additionalProperties: false
+    GetRentalQuotationListMessage:
+      type: object
+      properties:
+        status:
+          type: string
+          nullable: true
+        datetype:
+          type: string
+          nullable: true
+        fromdate:
+          type: string
+          format: date
+          nullable: true
+        todate:
+          type: string
+          format: date
+          nullable: true
+        issuedby:
+          type: string
+          nullable: true
+        quoteno:
+          type: string
+          nullable: true
+        leadno:
+          type: string
+          nullable: true
+        customername:
+          type: string
+          nullable: true
+      additionalProperties: false
+    GetRentalQuotationMessage:
+      type: object
+      properties:
+        quoteno:
+          type: string
+          nullable: true
+      additionalProperties: false
+    LeadMasterCreate:
+      type: object
+      properties:
+        SourceType:
+          type: string
+          nullable: true
+        LeadType:
+          type: string
+          nullable: true
+        CustomerName:
+          type: string
+          nullable: true
+        ContactNo:
+          type: string
+          nullable: true
+        Email:
+          type: string
+          nullable: true
+        Note:
+          type: string
+          nullable: true
+        CustNRIC:
+          type: string
+          nullable: true
+        ContactPerson:
+          type: string
+          nullable: true
+        MobileNo:
+          type: string
+          nullable: true
+        EntryStaff:
+          type: string
+          nullable: true
+      additionalProperties: false
+    LeadMasterPost:
+      type: object
+      properties:
+        status:
+          type: string
+          nullable: true
+        datetype:
+          type: string
+          nullable: true
+        fromdate:
+          type: string
+          format: date
+          nullable: true
+        todate:
+          type: string
+          format: date
+          nullable: true
+        leadtype:
+          type: string
+          nullable: true
+        assignto:
+          type: string
+          nullable: true
+        assignby:
+          type: string
+          nullable: true
+        applicationno:
+          type: string
+          nullable: true
+        leadno:
+          type: string
+          nullable: true
+        customername:
+          type: string
+          nullable: true
+        entryStaff:
+          type: string
+          nullable: true
+      additionalProperties: false
+    LoginMessage:
+      type: object
+      properties:
+        Id:
+          type: string
+          nullable: true
+        Password:
+          type: string
+          nullable: true
+        DeviceToken:
+          type: string
+          nullable: true
+        OSName:
+          type: string
+          nullable: true
+      additionalProperties: false
+    LogoutMessage:
+      type: object
+      properties:
+        UserID:
+          type: string
+          nullable: true
+        DeviceToken:
+          type: string
+          nullable: true
+      additionalProperties: false
+    LoseSalesQuotationMessage:
+      type: object
+      properties:
+        quoteno:
+          type: string
+          nullable: true
+      additionalProperties: false
+    MailRequest:
+      type: object
+      properties:
+        subject:
+          type: string
+          nullable: true
+        to:
+          type: string
+          nullable: true
+        cc:
+          type: string
+          nullable: true
+        body:
+          type: string
+          nullable: true
+      additionalProperties: false
+    PrintSalesQuotationAsyncMessage:
+      type: object
+      properties:
+        quoteno:
+          type: string
+          nullable: true
+      additionalProperties: false
+    QuoteDetItem:
+      type: object
+      properties:
+        costitem:
+          type: string
+          nullable: true
+        remark:
+          type: string
+          nullable: true
+        total:
+          type: number
+          format: double
+          nullable: true
+      additionalProperties: false
+    QuoteDetItemDTO:
+      type: object
+      properties:
+        costitem:
+          type: string
+          nullable: true
+        remark:
+          type: string
+          nullable: true
+        total:
+          type: number
+          format: double
+          nullable: true
+      additionalProperties: false
+    QuoteLeadMasterMessage:
+      type: object
+      properties:
+        leadno:
+          type: string
+          nullable: true
+        sourcetype:
+          type: string
+          nullable: true
+        leadtype:
+          type: string
+          nullable: true
+        customername:
+          type: string
+          nullable: true
+        contactno:
+          type: string
+          nullable: true
+        email:
+          type: string
+          nullable: true
+        nric:
+          type: string
+          nullable: true
+      additionalProperties: false
+    RequestGenLead:
+      type: object
+      properties:
+        quoteno:
+          type: string
+          nullable: true
+        customername:
+          type: string
+          nullable: true
+        contactid:
+          type: string
+          nullable: true
+        EntryStaff:
+          type: string
+          nullable: true
+      additionalProperties: false
+    SalesQuotationAddItem:
+      type: object
+      properties:
+        quoteno:
+          type: string
+          nullable: true
+        regno:
+          type: string
+          nullable: true
+        rev:
+          type: string
+          nullable: true
+        salesprice:
+          type: number
+          format: double
+          nullable: true
+        installmentAmt:
+          type: number
+          format: double
+          nullable: true
+        loanPeriod:
+          type: number
+          format: double
+          nullable: true
+        loanIntRate:
+          type: number
+          format: double
+          nullable: true
+        downPayment:
+          type: number
+          format: double
+          nullable: true
+        quotedetitem:
+          type: array
+          items:
+            $ref: '#/components/schemas/QuoteDetItem'
+          nullable: true
+      additionalProperties: false
+    SalesQuotationDetailItemDTO:
+      type: object
+      properties:
+        costitem:
+          type: string
+          nullable: true
+        remark:
+          type: string
+          nullable: true
+        total:
+          type: number
+          format: double
+          nullable: true
+      additionalProperties: false
+    SalesQuotationFilter:
+      type: object
+      properties:
+        status:
+          type: string
+          nullable: true
+        datetype:
+          type: string
+          nullable: true
+        fromdate:
+          type: string
+          format: date
+          nullable: true
+        todate:
+          type: string
+          format: date
+          nullable: true
+        issuedby:
+          type: string
+          nullable: true
+        issuedto:
+          type: string
+          nullable: true
+        quoteno:
+          type: string
+          nullable: true
+        leadno:
+          type: string
+          nullable: true
+        customername:
+          type: string
+          nullable: true
+      additionalProperties: false
+    SalesQuotationGet:
+      type: object
+      properties:
+        quoteno:
+          type: string
+          nullable: true
+      additionalProperties: false
+    SendWhatsappMessage:
+      type: object
+      properties:
+        SID:
+          type: string
+          nullable: true
+        Token:
+          type: string
+          nullable: true
+        From:
+          type: string
+          nullable: true
+        To:
+          type: string
+          nullable: true
+        Body:
+          type: string
+          nullable: true
+      additionalProperties: false
+    SubmitPostApplicationMessage:
+      type: object
+      properties:
+        ApplicationNo:
+          type: string
+          nullable: true
+        ApplicationRev:
+          type: string
+          nullable: true
+      additionalProperties: false
+    UnassignLeadMasterMessage:
+      type: object
+      properties:
+        leadno:
+          type: string
+          nullable: true
+      additionalProperties: false
+    UndoApprovalHpApplicationMessage:
+      type: object
+      properties:
+        ApplicationNo:
+          type: string
+          nullable: true
+        ApplicationRev:
+          type: string
+          nullable: true
+      additionalProperties: false
+    UndoConfirmPurchaseQuotationMessage:
+      type: object
+      properties:
+        quoteno:
+          type: string
+          nullable: true
+      additionalProperties: false
+    UndoConfirmRentalQuotationMessage:
+      type: object
+      properties:
+        quoteno:
+          type: string
+          nullable: true
+      additionalProperties: false
+    UndoConfirmSalesQuotationMessage:
+      type: object
+      properties:
+        quoteno:
+          type: string
+          nullable: true
+      additionalProperties: false
+    UndoQuoteDetailsMessage:
+      type: object
+      properties:
+        quoteno:
+          type: string
+          nullable: true
+      additionalProperties: false
+    UndoQuoteItemMessage:
+      type: object
+      properties:
+        quoteno:
+          type: string
+          nullable: true
+      additionalProperties: false
+    UnloseSalesQuotationMessage:
+      type: object
+      properties:
+        quoteno:
+          type: string
+          nullable: true
+      additionalProperties: false
+    UnvoidLeadMasterMessage:
+      type: object
+      properties:
+        leadno:
+          type: string
+          nullable: true
+        voiddate:
+          type: string
+          format: date
+          nullable: true
+        voidremark:
+          type: string
+          nullable: true
+        voidstaff:
+          type: string
+          nullable: true
+      additionalProperties: false
+    UnvoidPurchaseQuotationMessage:
+      type: object
+      properties:
+        quoteno:
+          type: string
+          nullable: true
+      additionalProperties: false
+    UnvoidRentalQuotationMessage:
+      type: object
+      properties:
+        quoteno:
+          type: string
+          nullable: true
+      additionalProperties: false
+    UnvoidSalesQuotationMessage:
+      type: object
+      properties:
+        quoteno:
+          type: string
+          nullable: true
+      additionalProperties: false
+    UpdateActivityMessage:
+      type: object
+      properties:
+        leadno:
+          type: string
+          nullable: true
+        code:
+          type: number
+          format: double
+        followupdate:
+          type: string
+          format: date-time
+          nullable: true
+        remark:
+          type: string
+          nullable: true
+        entrystaff:
+          type: string
+          nullable: true
+      additionalProperties: false
+    UpdateApplicantMessage:
+      type: object
+      properties:
+        ApplicationNo:
+          type: string
+          nullable: true
+        ApplicationRev:
+          type: string
+          nullable: true
+        NRIC:
+          type: string
+          nullable: true
+      additionalProperties: false
+    UpdateApprovalAdviceMessage:
+      type: object
+      properties:
+        ApplicationNo:
+          type: string
+          nullable: true
+        ApplicationRev:
+          type: string
+          nullable: true
+        FinanceAmount:
+          type: number
+          format: double
+          nullable: true
+        FinancePeriod:
+          type: number
+          format: double
+          nullable: true
+        IntRate:
+          type: number
+          format: double
+          nullable: true
+        MonthlyIns:
+          type: number
+          format: double
+          nullable: true
+        ApprovalAdviceDate:
+          type: string
+          format: date
+          nullable: true
+        ValidDate:
+          type: string
+          format: date
+          nullable: true
+        Remark:
+          type: string
+          nullable: true
+      additionalProperties: false
+    UpdateCustomerMessage:
+      type: object
+      properties:
+        quoteno:
+          type: string
+          nullable: true
+        customername:
+          type: string
+          nullable: true
+        nric:
+          type: string
+          nullable: true
+        contactperson:
+          type: string
+          nullable: true
+        email:
+          type: string
+          nullable: true
+        mobileno:
+          type: string
+          nullable: true
+        contactno:
+          type: string
+          nullable: true
+      additionalProperties: false
+    UpdateCustomerPurchaseQuotationMessage:
+      type: object
+      properties:
+        quoteno:
+          type: string
+          nullable: true
+        nric:
+          type: string
+          nullable: true
+      additionalProperties: false
+    UpdateCustomerRentalQuotationMessage:
+      type: object
+      properties:
+        quoteno:
+          type: string
+          nullable: true
+        nric:
+          type: string
+          nullable: true
+      additionalProperties: false
+    UpdateDetailInsuranceQuotationMessage:
+      type: object
+      properties:
+        quoteno:
+          type: string
+          nullable: true
+        quotedate:
+          type: string
+          format: date
+          nullable: true
+        typeofcoverage:
+          type: string
+          nullable: true
+      additionalProperties: false
+    UpdateDetailPurchaseQuotationMessage:
+      type: object
+      properties:
+        quoteno:
+          type: string
+          nullable: true
+        quotedate:
+          type: string
+          format: date
+          nullable: true
+      additionalProperties: false
+    UpdateDetailRentalQuotationMessage:
+      type: object
+      properties:
+        quoteno:
+          type: string
+          nullable: true
+        quotedate:
+          type: string
+          format: date
+          nullable: true
+      additionalProperties: false
+    UpdateDriverInsuranceQuotationMessage:
+      type: object
+      properties:
+        name:
+          type: string
+          nullable: true
+        nric:
+          type: string
+          nullable: true
+        dob:
+          type: string
+          format: date
+          nullable: true
+        gender:
+          type: string
+          nullable: true
+        passtype:
+          type: string
+          nullable: true
+        maritalst:
+          type: string
+          nullable: true
+        nationality:
+          type: string
+          nullable: true
+        drivingpassdate:
+          type: string
+          format: date
+          nullable: true
+        quoteno:
+          type: string
+          nullable: true
+        contactno:
+          type: string
+          nullable: true
+        email:
+          type: string
+          nullable: true
+        addr1:
+          type: string
+          nullable: true
+        addr2:
+          type: string
+          nullable: true
+        addr3:
+          type: string
+          nullable: true
+        zip:
+          type: string
+          nullable: true
+        country:
+          type: string
+          nullable: true
+        baddr1:
+          type: string
+          nullable: true
+        baddr2:
+          type: string
+          nullable: true
+        baddr3:
+          type: string
+          nullable: true
+        billzip:
+          type: string
+          nullable: true
+        billcountry:
+          type: string
+          nullable: true
+        job:
+          type: string
+          nullable: true
+        salary:
+          type: number
+          format: double
+          nullable: true
+        employer:
+          type: string
+          nullable: true
+        employercontact:
+          type: string
+          nullable: true
+        lengthofservice:
+          type: integer
+          format: int32
+          nullable: true
+        selfemployed:
+          type: boolean
+          nullable: true
+        issameaddress:
+          type: boolean
+          nullable: true
+        code:
+          type: number
+          format: double
+      additionalProperties: false
+    UpdateFullSettlementPurchaseQuotationMessage:
+      type: object
+      properties:
+        quoteno:
+          type: string
+          nullable: true
+        isfullsettlement:
+          type: boolean
+          nullable: true
+        financecompany:
+          type: string
+          nullable: true
+        fullsettlement:
+          type: string
+          nullable: true
+        settlementduedate:
+          type: string
+          format: date
+          nullable: true
+      additionalProperties: false
+    UpdateGuarantorMessage:
+      type: object
+      properties:
+        ApplicationNo:
+          type: string
+          nullable: true
+        ApplicationRev:
+          type: string
+          nullable: true
+        type:
+          type: string
+          nullable: true
+        nric:
+          type: string
+          nullable: true
+        name:
+          type: string
+          nullable: true
+        dob:
+          type: string
+          format: date
+          nullable: true
+        gender:
+          type: string
+          nullable: true
+        passtype:
+          type: string
+          nullable: true
+        maritalst:
+          type: string
+          nullable: true
+        nationality:
+          type: string
+          nullable: true
+        drivingpassdate:
+          type: string
+          format: date
+          nullable: true
+        contactno:
+          type: string
+          nullable: true
+        email:
+          type: string
+          nullable: true
+        addr1:
+          type: string
+          nullable: true
+        addr2:
+          type: string
+          nullable: true
+        addr3:
+          type: string
+          nullable: true
+        zip:
+          type: string
+          nullable: true
+        country:
+          type: string
+          nullable: true
+        baddr1:
+          type: string
+          nullable: true
+        baddr2:
+          type: string
+          nullable: true
+        baddr3:
+          type: string
+          nullable: true
+        billzip:
+          type: string
+          nullable: true
+        billcountry:
+          type: string
+          nullable: true
+        job:
+          type: string
+          nullable: true
+        salary:
+          type: number
+          format: double
+          nullable: true
+        employer:
+          type: string
+          nullable: true
+        employercontact:
+          type: string
+          nullable: true
+        lengthofservice:
+          type: integer
+          format: int32
+          nullable: true
+        issameaddress:
+          type: boolean
+          nullable: true
+        selfemployed:
+          type: boolean
+          nullable: true
+        relation:
+          type: string
+          nullable: true
+        code:
+          type: number
+          format: double
+      additionalProperties: false
+    UpdateHpApplicationMessage:
+      type: object
+      properties:
+        ApplicationNo:
+          type: string
+          nullable: true
+        ApplicationRev:
+          type: string
+          nullable: true
+        ApplicationDate:
+          type: string
+          format: date
+          nullable: true
+      additionalProperties: false
+    UpdateInsuredDetailMessage:
+      type: object
+      properties:
+        quoteno:
+          type: string
+          nullable: true
+        nric:
+          type: string
+          nullable: true
+        ncd:
+          type: boolean
+          nullable: true
+        ncd_pct:
+          type: number
+          format: double
+          nullable: true
+        claimlast3years:
+          type: boolean
+          nullable: true
+        previnsurer:
+          type: string
+          nullable: true
+        prevvehino:
+          type: string
+          nullable: true
+        prevclaim:
+          type: string
+          nullable: true
+      additionalProperties: false
+    UpdateIsTradeInMessage:
+      type: object
+      properties:
+        quoteno:
+          type: string
+          nullable: true
+        istradein:
+          type: boolean
+          nullable: true
+        financecompany:
+          type: string
+          nullable: true
+        tradeinprice:
+          type: number
+          format: double
+          nullable: true
+        lessfullsettlement:
+          type: number
+          format: double
+          nullable: true
+        tradeinregno:
+          type: string
+          nullable: true
+      additionalProperties: false
+    UpdateItemInsuranceQuotationMessage:
+      type: object
+      properties:
+        insurancecompany:
+          type: string
+          nullable: true
+        premium:
+          type: number
+          format: double
+          nullable: true
+        excess:
+          type: number
+          format: double
+          nullable: true
+        remark:
+          type: string
+          nullable: true
+        quoteno:
+          type: string
+          nullable: true
+        code:
+          type: number
+          format: double
+      additionalProperties: false
+    UpdateItemRentalQuotationMessage:
+      type: object
+      properties:
+        quoteno:
+          type: string
+          nullable: true
+        make:
+          type: string
+          nullable: true
+        model:
+          type: string
+          nullable: true
+        description:
+          type: string
+          nullable: true
+        price:
+          type: number
+          format: double
+          nullable: true
+        remark:
+          type: string
+          nullable: true
+        code:
+          type: number
+          format: double
+      additionalProperties: false
+    UpdateLeadMasterMessage:
+      type: object
+      properties:
+        LeadNo:
+          type: string
+          nullable: true
+        SourceType:
+          type: string
+          nullable: true
+        LeadType:
+          type: string
+          nullable: true
+        CustomerName:
+          type: string
+          nullable: true
+        ContactNo:
+          type: string
+          nullable: true
+        Email:
+          type: string
+          nullable: true
+        Note:
+          type: string
+          nullable: true
+        CustNRIC:
+          type: string
+          nullable: true
+        ContactPerson:
+          type: string
+          nullable: true
+        MobileNo:
+          type: string
+          nullable: true
+      additionalProperties: false
+    UpdateLoanDetailsMessage:
+      type: object
+      properties:
+        ApplicationNo:
+          type: string
+          nullable: true
+        ApplicationRev:
+          type: string
+          nullable: true
+        ApplicationType:
+          type: string
+          nullable: true
+        ApplicationDate:
+          type: string
+          format: date
+          nullable: true
+        RegNo:
+          type: string
+          nullable: true
+        Make:
+          type: string
+          nullable: true
+        Model:
+          type: string
+          nullable: true
+        PurchasePrice:
+          type: number
+          format: double
+          nullable: true
+        FinanceAmt:
+          type: number
+          format: double
+          nullable: true
+        IntRate:
+          type: number
+          format: double
+          nullable: true
+        FinancePeriod:
+          type: integer
+          format: int32
+          nullable: true
+        MonthlyInstallment:
+          type: number
+          format: double
+          nullable: true
+      additionalProperties: false
+    UpdatePurchaseQuotationMessage:
+      type: object
+      properties:
+        quoteno:
+          type: string
+          nullable: true
+        regno:
+          type: string
+          nullable: true
+        rev:
+          type: string
+          nullable: true
+        purchaseprice:
+          type: number
+          format: double
+          nullable: true
+        quotedetitem:
+          type: array
+          items:
+            $ref: '#/components/schemas/QuoteDetItemDTO'
+          nullable: true
+      additionalProperties: false
+    UpdateQuotationDetailMessage:
+      type: object
+      properties:
+        quoteno:
+          type: string
+          nullable: true
+        remarks:
+          type: string
+          nullable: true
+      additionalProperties: false
+    UpdateQuote:
+      type: object
+      properties:
+        quoteno:
+          type: string
+          nullable: true
+        quotedate:
+          type: string
+          format: date
+          nullable: true
+      additionalProperties: false
+    UpdateSalesQuotationMessage:
+      type: object
+      properties:
+        vehiclecode:
+          type: number
+          format: double
+          nullable: true
+        quoteno:
+          type: string
+          nullable: true
+        regno:
+          type: string
+          nullable: true
+        rev:
+          type: string
+          nullable: true
+        make:
+          type: string
+          nullable: true
+        model:
+          type: string
+          nullable: true
+        chassisno:
+          type: string
+          nullable: true
+        vehicletype:
+          type: string
+          nullable: true
+        regdate:
+          type: string
+          format: date
+          nullable: true
+        manuyear:
+          type: string
+          nullable: true
+        color:
+          type: string
+          nullable: true
+        salesprice:
+          type: number
+          format: double
+          nullable: true
+        installmentAmt:
+          type: number
+          format: double
+          nullable: true
+        financeamt:
+          type: number
+          format: double
+          nullable: true
+        loanPeriod:
+          type: number
+          format: double
+          nullable: true
+        loanIntRate:
+          type: number
+          format: double
+          nullable: true
+        downPayment:
+          type: number
+          format: double
+          nullable: true
+        isusingadvancedinstallmentamount:
+          type: boolean
+          nullable: true
+        quotedetitems:
+          type: array
+          items:
+            $ref: '#/components/schemas/SalesQuotationDetailItemDTO'
+          nullable: true
+      additionalProperties: false
+    UpdateVehicleMessage:
+      type: object
+      properties:
+        quoteno:
+          type: string
+          nullable: true
+        regno:
+          type: string
+          nullable: true
+      additionalProperties: false
+    VehicleFilter:
+      type: object
+      properties:
+        regno:
+          type: string
+          nullable: true
+      additionalProperties: false
+    VerifyHpApplicationMessage:
+      type: object
+      properties:
+        ApplicationNo:
+          type: string
+          nullable: true
+        ApplicationRev:
+          type: string
+          nullable: true
+        ApprovalDate:
+          type: string
+          format: date
+          nullable: true
+        ApprovalRemark:
+          type: string
+          nullable: true
+        ApprovalST:
+          type: string
+          nullable: true
+        ApprovalStaff:
+          type: string
+          nullable: true
+      additionalProperties: false
+    VoidHpApplicationMessage:
+      type: object
+      properties:
+        ApplicationNo:
+          type: string
+          nullable: true
+        ApplicationRev:
+          type: string
+          nullable: true
+        VoidDate:
+          type: string
+          format: date
+          nullable: true
+        VoidRemark:
+          type: string
+          nullable: true
+        VoidStaff:
+          type: string
+          nullable: true
+      additionalProperties: false
+    VoidInsuranceQuotationMessage:
+      type: object
+      properties:
+        quoteno:
+          type: string
+          nullable: true
+        voiddate:
+          type: string
+          format: date
+          nullable: true
+        voidremark:
+          type: string
+          nullable: true
+        voidstaff:
+          type: string
+          nullable: true
+      additionalProperties: false
+    VoidLeadMasterMessage:
+      type: object
+      properties:
+        leadno:
+          type: string
+          nullable: true
+        voiddate:
+          type: string
+          format: date
+          nullable: true
+        voidremark:
+          type: string
+          nullable: true
+        voidstaff:
+          type: string
+          nullable: true
+      additionalProperties: false
+    VoidPurchaseQuotationMessage:
+      type: object
+      properties:
+        quoteno:
+          type: string
+          nullable: true
+        voiddate:
+          type: string
+          format: date
+          nullable: true
+        voidremark:
+          type: string
+          nullable: true
+        voidstaff:
+          type: string
+          nullable: true
+      additionalProperties: false
+    VoidRentalQuotationMessage:
+      type: object
+      properties:
+        quoteno:
+          type: string
+          nullable: true
+        voiddate:
+          type: string
+          format: date
+          nullable: true
+        voidremark:
+          type: string
+          nullable: true
+        voidstaff:
+          type: string
+          nullable: true
+      additionalProperties: false
+    VoidSalesQuotationMessage:
+      type: object
+      properties:
+        quoteno:
+          type: string
+          nullable: true
+        voiddate:
+          type: string
+          format: date-time
+          nullable: true
+        voidremark:
+          type: string
+          nullable: true
+        voidstaff:
+          type: string
+          nullable: true
+      additionalProperties: false
+  securitySchemes:
+    ApiKey:
+      type: apiKey
+      description: API Key Authentication
+      name: ApiKey
+      in: header
+security:
+  - ApiKey: []

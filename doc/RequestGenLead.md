@@ -1,0 +1,18 @@
+# openapi.model.RequestGenLead
+
+## Load the model package
+```dart
+import 'package:openapi/api.dart';
+```
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**quoteno** | **String** |  | [optional] 
+**customername** | **String** |  | [optional] 
+**contactid** | **String** |  | [optional] 
+**entryStaff** | **String** |  | [optional] 
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+
